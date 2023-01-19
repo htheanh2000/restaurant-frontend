@@ -1,31 +1,30 @@
 import type { ReactNode } from 'react';
 
-import type { IconName } from '../icon';
-
 const STYLES = {
   primary: {
     bg: 'bg-green',
     'text-color': 'text-white',
-    'icon-color': 'black',
   },
   secondary: {
-    bg: 'bg-secondary',
+    bg: 'bg-orange',
     'text-color': 'text-white',
-    'icon-color': 'white',
   },
   disable: {
     bg: 'bg-gray',
     'text-color': 'text-black',
-    'icon-color': 'black',
   },
 };
+
+const SIZES = {
+  md : 'px-6 py-2',
+  lg: 'px-10 py-4'
+}
 
 type TProps = {
   className?: string;
   children?: ReactNode;
-  rightIcon?: IconName;
-  leftIcon?: IconName;
   type?: keyof typeof STYLES;
+  size?: keyof typeof SIZES;
   onClick?: () => void;
 };
 
@@ -33,20 +32,17 @@ const Button = (props: TProps) => {
   const {
     children,
     type = 'primary',
-    // leftIcon,
-    // rightIcon,
     onClick,
-    className,
+    className = '',
+    size = 'md',
   } = props;
 
   return (
     <div
       onClick={onClick}
-      className={`flex ${className} cursor-pointer items-center justify-between ${STYLES[type].bg} rounded-full px-6 py-2`}
+      className={`flex ${className} cursor-pointer items-center justify-between ${STYLES[type].bg} rounded-full ${SIZES[size]}`}
     >
-      {/* {leftIcon && <Icon className="mr-3" color={STYLES[type]['icon-color']} name={leftIcon} />} */}
-      <span className={`${STYLES[type]['text-color']}`}>{children}</span>
-      {/* {rightIcon && <Icon className="ml-3" color={STYLES[type]['icon-color']} name={rightIcon} />} */}
+      <span className={`text-sm font-semibold ${STYLES[type]['text-color']}`}>{children}</span>
     </div>
   );
 };

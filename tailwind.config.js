@@ -2,6 +2,16 @@
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    screens: {
+      mobile: '425px',
+      // => @media (min-width: 640px) { ... }
+
+      tablet: '768px',
+      // => @media (min-width: 640px) { ... }
+
+      desktop: '1024px',
+      // => @media (min-width: 1024px) { ... }
+    },
     fontSize: {
       xs: '0.75rem',
       sm: '0.875rem',
@@ -13,12 +23,15 @@ module.exports = {
       '4xl': '2.25rem',
       '5xl': '3rem',
       '6xl': '4rem',
+      'display-1': '5rem',
     },
     extend: {
       colors: {
+        brown: '#311F09',
         gray: '#D0CCC7',
         green: '#3FA72F',
         orange: '#FF8A00',
+        green: '#3FC66E'
       },
     },
   },

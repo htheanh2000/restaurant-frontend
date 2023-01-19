@@ -7,7 +7,7 @@ type Props = {
   size?: keyof typeof IconSize;
 };
 
-type IconName = 'cart' | 'menu';
+type IconName = 'cart' | 'menu' | 'star' | 'star-outline' | 'left' | 'right' | 'ellipses';
 
 type IObject = {
   [key: string]: any;
@@ -34,9 +34,9 @@ const IconSize = {
 };
 
 const Icon = (props: Props) => {
-  const { name } = props;
+  const { name, className = '' } = props;
   return (
-    <div>
+    <div className={className}>
       <Image src={icons[name]} alt="icons" />
     </div>
   );

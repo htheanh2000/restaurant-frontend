@@ -33,7 +33,7 @@ const Header = () => {
   return (
     <div className="container mx-auto mt-8 flex items-center justify-between">
       <Image src={IM_logo} alt="Restaurant Logo" />
-      <nav>
+      <nav className='max-desktop:hidden'>
         <ul>
           {LINKS.map((link) => (
             <Link

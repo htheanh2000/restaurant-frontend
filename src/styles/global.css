@@ -9,3 +9,16 @@ a {
   text-decoration: none;
 }
 
+
+.label {
+  @apply text-orange font-light py-2 px-4 rounded-full bg-orange/20 text-sm;
+}
+
+h1 {
+  line-height: 88px;
+  @apply font-bold text-display-1 ;
+}
+
+p,span {
+  @apply text-xl font-extralight;
+}
