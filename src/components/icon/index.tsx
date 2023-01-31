@@ -7,7 +7,7 @@ type Props = {
   size?: keyof typeof IconSize;
 };
 
-type IconName = 'cart' | 'menu' | 'star' | 'star-outline' | 'left' | 'right' | 'ellipses';
+type IconName = 'cart' | 'menu' | 'star' | 'star-outline' | 'left' | 'right' | 'ellipses' | 'twitter' | 'facebook' | 'instagram';
 
 type IObject = {
   [key: string]: any;

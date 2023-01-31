@@ -26,6 +26,9 @@ module.exports = {
       'display-1': '5rem',
     },
     extend: {
+      zIndex: {
+        '100': '100',
+      },
       colors: {
         brown: '#311F09',
         gray: '#D0CCC7',

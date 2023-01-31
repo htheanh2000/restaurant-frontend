@@ -19,6 +19,6 @@ h1 {
   @apply font-bold text-display-1 ;
 }
 
-p,span {
+p {
   @apply text-xl font-extralight;
 }

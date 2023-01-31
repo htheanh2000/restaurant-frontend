@@ -3,8 +3,8 @@ import Link from 'next/link';
 
 import IM_logo from '@/assets/images/logo.png';
 
-import Button from '../button';
-import Icon from '../icon';
+import Button from '../../components/button';
+import Icon from '../../components/icon';
 
 const LINKS = [
   {
