@@ -5,11 +5,16 @@ import IM_logo from '@/assets/images/logo.png';
 
 import Button from '../../components/button';
 import Icon from '../../components/icon';
+import { useRouter } from 'next/dist/client/router';
 
 const LINKS = [
   {
     name: 'Home',
-    url: '/home',
+    url: '/',
+  },
+  {
+    name: 'Menu',
+    url: '/menu',
   },
   {
     name: 'About us',
@@ -29,7 +34,13 @@ const LINKS = [
   },
 ];
 
+
+
 const Header = () => {
+  const router = useRouter()
+  const onClickLoginBtn = () => {
+    router.push('login')
+  }
   return (
     <div className="container mx-auto mt-8 flex items-center justify-between">
       <Image src={IM_logo} alt="Restaurant Logo" />
@@ -51,7 +62,7 @@ const Header = () => {
         <div className="rounded-full bg-gray/10 p-2">
           <Icon name="cart" />
         </div>
-        <Button className="ml-6">Login</Button>
+        <Button onClick={() => onClickLoginBtn()} className="ml-6">Login</Button>
       </div>
     </div>
   );

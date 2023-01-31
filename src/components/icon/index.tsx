@@ -7,7 +7,7 @@ type Props = {
   size?: keyof typeof IconSize;
 };
 
-type IconName = 'cart' | 'menu' | 'star' | 'star-outline' | 'left' | 'right' | 'ellipses' | 'twitter' | 'facebook' | 'instagram';
+type IconName = 'cart' | 'menu' | 'star' | 'star-outline' | 'left' | 'right' | 'ellipses' | 'twitter' | 'facebook' | 'instagram' | 'google';
 
 type IObject = {
   [key: string]: any;
@@ -34,10 +34,10 @@ const IconSize = {
 };
 
 const Icon = (props: Props) => {
-  const { name, className = '' } = props;
+  const { name, className = '' , size='sm'} = props;
   return (
     <div className={className}>
-      <Image src={icons[name]} alt="icons" />
+      <Image width={IconSize[size]} height={IconSize[size]} src={icons[name]} alt="icons" />
     </div>
   );
 };

@@ -9,6 +9,10 @@ const STYLES = {
     bg: 'bg-orange',
     'text-color': 'text-white',
   },
+  white: {
+    bg: 'bg-white',
+    'text-color': 'text-black',
+  },
   disable: {
     bg: 'bg-gray',
     'text-color': 'text-black',
@@ -40,9 +44,9 @@ const Button = (props: TProps) => {
   return (
     <div
       onClick={onClick}
-      className={`flex ${className} cursor-pointer items-center justify-between ${STYLES[type].bg} rounded-full ${SIZES[size]}`}
+      className={`flex ${className} cursor-pointer items-center justify-center ${STYLES[type].bg} rounded-full ${SIZES[size]}`}
     >
-      <span className={`text-sm font-semibold ${STYLES[type]['text-color']}`}>{children}</span>
+      <span className={`text-base font-semibold ${STYLES[type]['text-color']}`}>{children}</span>
     </div>
   );
 };
