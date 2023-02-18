@@ -1,47 +1,60 @@
-import Image from 'next/image';
+import ellipses from '../../assets/icons/ellipses.svg'
+import facebook from '../../assets/icons/facebook.svg'
+import google from '../../assets/icons/google.svg'
+import instagram from '../../assets/icons/instagram.svg'
+import left from '../../assets/icons/left.svg'
+import menu from '../../assets/icons/menu.svg'
+import right from '../../assets/icons/right.svg'
+import starOutline from '../../assets/icons/star-outline.svg'
+import star from '../../assets/icons/star.svg'
+import twitter from '../../assets/icons/twitter.svg'
+
 
 type Props = {
-  color?: string; // default: black
-  name: IconName;
-  className?: string;
-  size?: keyof typeof IconSize;
-};
+  color?: string // default: black
+  name: IconName
+  className?: string
+  size?: keyof typeof IconSize
+}
 
-type IconName = 'cart' | 'menu' | 'star' | 'star-outline' | 'left' | 'right' | 'ellipses' | 'twitter' | 'facebook' | 'instagram' | 'google';
+type IconName = keyof typeof icons
 
-type IObject = {
-  [key: string]: any;
-};
-const context = require.context('@/assets/icons', false, /\.(png|jpe?g|svg)$/);
-
-const icons: IObject = {};
-// Import all svg icons ! Is there any way better, and is it better than import manually ????
-context.keys().forEach((key: string) => {
-  const splitname = key?.split('./');
-  if (splitname.length === 1) return;
-  const name = splitname
-    ?.pop() // remove the first 2 characters
-    ?.substring(0, key.length - 6); // remove the file extension
-  if (!name) return;
-  icons[name] = context(key);
-});
+const icons = {
+  star: star,
+  ellipses:ellipses,
+  facebook: facebook,
+  google: google,
+  instagram: instagram,
+  left: left,
+  menu: menu,
+  right: right,
+  "star-outline": starOutline,
+  twitter: twitter,
+}
 
 const IconSize = {
   sx: 16,
   sm: 24, // default size
   md: 32,
   lg: 40,
-};
+}
 
 const Icon = (props: Props) => {
-  const { name, className = '' , size='sm'} = props;
+  const { name, size = 'sm', className } = props
+ 
   return (
-    <div className={className}>
-      <Image width={IconSize[size]} height={IconSize[size]} src={icons[name]} alt="icons" />
+    <div>
+            <img
+                src={icons[name]}
+                className={`cursor-pointer ${className}`}
+                alt={`Icon ${name}`}
+                width={IconSize[size]}
+                height={IconSize[size]}
+            />
     </div>
-  );
-};
+  )
+}
 
-export type { IconName };
+export type { IconName }
 
-export default Icon;
+export default Icon
