@@ -1,0 +1,193 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component renders correctly 1`] = `
+<section
+  className="bg-brown"
+>
+  <div
+    className="container mx-auto py-32 flex justify-between "
+  >
+    <div>
+      <ForwardRef
+        alt="logo"
+        src={
+          {
+            "blurDataURL": "data:image/png;base64,imagedata",
+            "height": 40,
+            "src": "/img.jpg",
+            "width": 40,
+          }
+        }
+      />
+      <p
+        className="text-white max-w-xs mt-4 text-xl font-light leading-loose"
+      >
+        Viverra gravida morbi egestas facilisis tortor netus non duis tempor. 
+      </p>
+      <div
+        className="flex mt-4"
+      >
+        <Icon
+          className="bg-gray p-3 rounded-full mr-8 cursor-pointer"
+          key="twitter"
+          name="twitter"
+        />
+        <Icon
+          className="bg-gray p-3 rounded-full mr-8 cursor-pointer"
+          key="facebook"
+          name="facebook"
+        />
+        <Icon
+          className="bg-gray p-3 rounded-full mr-8 cursor-pointer"
+          key="instagram"
+          name="instagram"
+        />
+      </div>
+    </div>
+    <div
+      key="Page"
+    >
+      <h5
+        className="text-orange font-semibold text-xl mb-8"
+      >
+        Page
+      </h5>
+      <div
+        className="flex flex-col"
+      >
+        <a
+          className="text-xl capitalize font-light text-white my-2"
+          href="/"
+          key="home"
+        >
+          home
+        </a>
+        <a
+          className="text-xl capitalize font-light text-white my-2"
+          href="/"
+          key="menu"
+        >
+          menu
+        </a>
+        <a
+          className="text-xl capitalize font-light text-white my-2"
+          href="/"
+          key="order online"
+        >
+          order online
+        </a>
+        <a
+          className="text-xl capitalize font-light text-white my-2"
+          href="/"
+          key="catering"
+        >
+          catering
+        </a>
+        <a
+          className="text-xl capitalize font-light text-white my-2"
+          href="/"
+          key="reservation"
+        >
+          reservation
+        </a>
+      </div>
+    </div>
+    <div
+      key="Information"
+    >
+      <h5
+        className="text-orange font-semibold text-xl mb-8"
+      >
+        Information
+      </h5>
+      <div
+        className="flex flex-col"
+      >
+        <a
+          className="text-xl capitalize font-light text-white my-2"
+          href="/"
+          key="home"
+        >
+          home
+        </a>
+        <a
+          className="text-xl capitalize font-light text-white my-2"
+          href="/"
+          key="menu"
+        >
+          menu
+        </a>
+        <a
+          className="text-xl capitalize font-light text-white my-2"
+          href="/"
+          key="order online"
+        >
+          order online
+        </a>
+        <a
+          className="text-xl capitalize font-light text-white my-2"
+          href="/"
+          key="catering"
+        >
+          catering
+        </a>
+        <a
+          className="text-xl capitalize font-light text-white my-2"
+          href="/"
+          key="reservation"
+        >
+          reservation
+        </a>
+      </div>
+    </div>
+    <div
+      key="Get in touch"
+    >
+      <h5
+        className="text-orange font-semibold text-xl mb-8"
+      >
+        Get in touch
+      </h5>
+      <div
+        className="flex flex-col"
+      >
+        <a
+          className="text-xl capitalize font-light text-white my-2"
+          href="/"
+          key="home"
+        >
+          home
+        </a>
+        <a
+          className="text-xl capitalize font-light text-white my-2"
+          href="/"
+          key="menu"
+        >
+          menu
+        </a>
+        <a
+          className="text-xl capitalize font-light text-white my-2"
+          href="/"
+          key="order online"
+        >
+          order online
+        </a>
+        <a
+          className="text-xl capitalize font-light text-white my-2"
+          href="/"
+          key="catering"
+        >
+          catering
+        </a>
+        <a
+          className="text-xl capitalize font-light text-white my-2"
+          href="/"
+          key="reservation"
+        >
+          reservation
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+`;

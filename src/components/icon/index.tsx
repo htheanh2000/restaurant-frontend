@@ -8,7 +8,12 @@ import right from '../../assets/icons/right.svg'
 import starOutline from '../../assets/icons/star-outline.svg'
 import star from '../../assets/icons/star.svg'
 import twitter from '../../assets/icons/twitter.svg'
-
+import cart from '../../assets/icons/cart.svg'
+import close from '../../assets/icons/close.svg'
+import calendar from '../../assets/icons/calendar.svg'
+import clock from '../../assets/icons/clock.svg'
+import people from '../../assets/icons/people.svg'
+import Image from 'next/image'
 
 type Props = {
   color?: string // default: black
@@ -19,7 +24,7 @@ type Props = {
 
 type IconName = keyof typeof icons
 
-const icons = {
+export const icons = {
   star: star,
   ellipses:ellipses,
   facebook: facebook,
@@ -30,6 +35,11 @@ const icons = {
   right: right,
   "star-outline": starOutline,
   twitter: twitter,
+  cart:cart,
+  close:close,
+  calendar: calendar,
+  clock: clock,
+  people: people,
 }
 
 const IconSize = {
@@ -44,12 +54,13 @@ const Icon = (props: Props) => {
  
   return (
     <div>
-            <img
+            <Image
                 src={icons[name]}
                 className={`cursor-pointer ${className}`}
                 alt={`Icon ${name}`}
                 width={IconSize[size]}
                 height={IconSize[size]}
+                
             />
     </div>
   )

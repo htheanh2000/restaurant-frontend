@@ -46,35 +46,6 @@ const PAGE_LINKS = [
 
 ]
 
-const INFOMATION_LINKS = [
-    {
-        url: '/',
-        name: 'about us'
-    },
-    {
-        url: '/',
-        name: 'Testimonial'
-    },
-    {
-        url: '/',
-        name: 'event'
-    }
-]
-
-const GET_IN_TOUCH = [
-    {
-        url: '/',
-        name: 'about us'
-    },
-    {
-        url: '/',
-        name: 'Testimonial'
-    },
-    {
-        url: '/',
-        name: 'event'
-    }
-]
 
 const LINKS = [
     {
@@ -100,7 +71,8 @@ const Footer = () => {
                     <p className="text-white max-w-xs mt-4 text-xl font-light leading-loose">Viverra gravida morbi egestas facilisis tortor netus non duis tempor. </p>
                     <div className="flex mt-4">
                         {
-                            SOCIALs.map(social => <Icon className="bg-gray p-3 rounded-full mr-8 cursor-pointer" key={social.icon} name={social.icon} />)
+                            SOCIALs.map(social => 
+                            <Icon className="bg-gray p-3 rounded-full mr-8 cursor-pointer" key={social.icon} name={social.icon} />)
                         }
                     </div>
                 </div>

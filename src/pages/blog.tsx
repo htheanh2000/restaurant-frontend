@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { Meta } from '@/layouts/Meta';
+import { Meta } from '@/layouts/meta/Meta';
 import { Main } from '@/templates/Main';
 
 const Blog = () => (

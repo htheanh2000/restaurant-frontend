@@ -4,7 +4,7 @@ import type {
   InferGetStaticPropsType,
 } from 'next';
 
-import { Meta } from '@/layouts/Meta';
+import { Meta } from '@/layouts/meta/Meta';
 import { Main } from '@/templates/Main';
 
 type IBlogUrl = {

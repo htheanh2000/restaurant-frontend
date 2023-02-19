@@ -24,7 +24,10 @@
   "dependencies": {
     "@types/enzyme": "^3.10.12",
     "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/react-calendar": "^3.9.0",
+    "@types/react-datepicker": "^4.8.0",
     "@types/webpack-env": "^1.18.0",
+    "date-fns": "^2.29.3",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-15": "^1.4.4",
     "enzyme-adapter-react-16": "^1.15.7",
@@ -33,6 +36,9 @@
     "next-seo": "^5.15.0",
     "next-sitemap": "^3.1.45",
     "react": "^18.2.0",
+    "react-calendar": "^4.0.0",
+    "react-datepicker": "^4.10.0",
+    "react-day-picker": "^8.6.0",
     "react-dom": "^18.2.0",
     "require-context.macro": "^1.2.2"
   },

@@ -44,7 +44,7 @@ const Button = (props: TProps) => {
   return (
     <div
       onClick={onClick}
-      className={`flex ${className} cursor-pointer items-center justify-center ${STYLES[type].bg} rounded-full ${SIZES[size]}`}
+      className={`flex cursor-pointer items-center justify-center ${STYLES[type].bg} rounded-full ${SIZES[size]} ${className}`}
     >
       <span className={`text-base font-semibold ${STYLES[type]['text-color']}`}>{children}</span>
     </div>

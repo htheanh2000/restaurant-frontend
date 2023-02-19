@@ -29,7 +29,7 @@ const Input = forwardRef((props: Props, ref, ) => {
           id={label}
           name={name}
           ref={inputRef}
-          className={`w-full px-4 py-2 cursor-pointer base-text text-gray outline rounded  outline-1 outline-gray focus:outline-primary`}
+          className={`w-full px-4 py-3 cursor-pointer base-text text-gray outline rounded  outline-1 outline-gray focus:outline-primary`}
           placeholder={placeholder}
           defaultValue={defaultValue}
         />
