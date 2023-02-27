@@ -27,27 +27,33 @@ const SIZES = {
 type TProps = {
   className?: string;
   children?: ReactNode;
-  type?: keyof typeof STYLES;
+  style?: keyof typeof STYLES;
   size?: keyof typeof SIZES;
   onClick?: () => void;
+  type?: "button" | "submit" | "reset" ;
+  disabled?: boolean
 };
 
 const Button = (props: TProps) => {
   const {
     children,
-    type = 'primary',
+    style = 'primary',
     onClick,
     className = '',
     size = 'md',
+    type = 'button',
+    disabled = false,
   } = props;
 
   return (
-    <div
+    <button
+     type={type}
       onClick={onClick}
-      className={`flex cursor-pointer items-center justify-center ${STYLES[type].bg} rounded-full ${SIZES[size]} ${className}`}
+      disabled={disabled}
+      className={`flex cursor-pointer w-full items-center justify-center ${STYLES[style].bg} rounded-full ${SIZES[size]} text-base font-semibold ${STYLES[style]['text-color']} ${className}`}
     >
-      <span className={`text-base font-semibold ${STYLES[type]['text-color']}`}>{children}</span>
-    </div>
+      {children}
+    </button>
   );
 };
 
