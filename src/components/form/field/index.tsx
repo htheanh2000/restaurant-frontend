@@ -10,6 +10,8 @@ interface FieldProps {
     name: string;
     type?: string;
     placeholder?: string;
+    min?: number;
+    max?: number;
 }
 
 const Field = ({ label, ...props } : FieldProps) => {

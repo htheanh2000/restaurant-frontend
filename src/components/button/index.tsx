@@ -50,7 +50,7 @@ const Button = (props: TProps) => {
      type={type}
       onClick={onClick}
       disabled={disabled}
-      className={`flex cursor-pointer w-full items-center justify-center ${STYLES[style].bg} rounded-full ${SIZES[size]} text-base font-semibold ${STYLES[style]['text-color']} ${className}`}
+      className={`flex cursor-pointer w-full items-center justify-center ${STYLES[style].bg} rounded ${SIZES[size]} text-base font-semibold ${STYLES[style]['text-color']} ${className}`}
     >
       {children}
     </button>

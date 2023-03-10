@@ -58,8 +58,8 @@ const userSlice = createSlice({
       })
       .addCase(logInAction.rejected, (state, action: any) => {
         console.log(action.payload.data)
-        state.status = 'idle',
-        state.error = action.payload
+        state.status = 'idle'
+        state.error = action.payload.message
       })
       .addCase(signUpAction.pending, (state, _action) => {
         state.status = 'loading'

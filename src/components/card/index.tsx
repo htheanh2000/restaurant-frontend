@@ -25,7 +25,7 @@ const Card = (props: TProps) => {
       </p>
       <div className="flex mx-auto justify-evenly mt-4">
         <h2 className="text-2xl font-semibold">$12.05</h2>
-        <Button type="secondary">Order Now</Button>
+        <Button className="mx-4" style="secondary">Order Now</Button>
       </div>
     </div>
   );

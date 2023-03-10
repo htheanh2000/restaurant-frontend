@@ -44,7 +44,7 @@ const Index = () => {
                <p className='max-w-lg'>Lorem ipsum dolor sit amet, consectetur
                   adipiscing elit. Sodales senectus dictum arcu sit tristique donec eget.</p>
                <div className='flex flex-row mt-16'>
-                  <Button size='lg' className='mr-4' type='secondary'>Order Now</Button>
+                  <Button size='lg' className='mr-4' style='secondary'>Order Now</Button>
                   <Button size='lg'>Reservation</Button>
                </div>
             </div>
@@ -61,7 +61,7 @@ const Index = () => {
                   <p className=''>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisis ultricies
                      at eleifend proin. Congue nibh nulla malesuada ultricies nec quam</p>
                   <div className='flex flex-row mt-16'>
-                     <Button size='lg' className='mr-4' type='secondary'>See our menu</Button>
+                     <Button size='lg' className='mr-4' style='secondary'>See our menu</Button>
                   </div>
                </div>
                <div>
@@ -84,7 +84,7 @@ const Index = () => {
                   <p className='max-w-lg'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisis ultricies
                      at eleifend proin. Congue nibh nulla malesuada ultricies nec quam</p>
                   <div className='flex flex-row mt-16'>
-                     <Button size='lg' className='mr-4' type='secondary'>See our menu</Button>
+                     <Button size='lg' className='mr-4' style='secondary'>See our menu</Button>
                   </div>
                </div>
                <div>
@@ -106,7 +106,7 @@ const Index = () => {
                }
             </div>
 
-            <Button size='lg' className='w-fit mx-auto mb-32' type='secondary'>View All</Button>
+            <Button size='lg' className='w-fit mx-auto mb-32' style='secondary'>View All</Button>
          </section>
 
 
@@ -134,7 +134,7 @@ const Index = () => {
                <p className='text-2xl pt-4 text-white text-center'>Dinner : sunday : 04:00pm-08:00pm</p>
                <p className='text-2xl pt-4 text-white text-center'>04:00pm-09:00pm</p>
                <div className='flex mx-auto w-fit mt-8'>
-                  <Button className='mr-4' type='secondary' size='lg'>Order</Button>
+                  <Button className='mr-4' style='secondary' size='lg'>Order</Button>
                   <Button className='' size='lg'>Reservation</Button>
                </div>
             </div>
