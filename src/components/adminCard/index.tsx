@@ -20,7 +20,7 @@ interface IProps {
 
 const Card = (props: IProps) => {
   const { onDelete, className, data } = props;
-  const { name, description, rating, price, category, url, id } = data;
+  const { name, description, rating, price,  url } = data;
   const STARS = [1, 2, 3, 4, 5]; // array represent for 5 start
   return (
     <div className={`rounded-3xl bg-gray/20 max-w-xs px-4 py-8 ${className}`}>
