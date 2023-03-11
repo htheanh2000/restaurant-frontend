@@ -41,7 +41,7 @@ const Card = (props: IProps) => {
       </div>
       <p className="text-center text-sm">{description}</p>
       <div className="flex mx-auto justify-evenly mt-4">
-        <h2 className="text-2xl font-semibold">${price}</h2>
+        <h2 className="text-2xl font-semibold">{formatter.format(price)}</h2>
         <Button
           onClick={() => onDelete && onDelete(data)}
           className="mx-4"
@@ -53,5 +53,13 @@ const Card = (props: IProps) => {
     </div>
   );
 };
+
+const formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'VND',
+  // These options are needed to round to whole numbers if that's what you want.
+  //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+  //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+});
 
 export default Card;
