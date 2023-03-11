@@ -1,43 +1,55 @@
-import React, { useRef, useState } from "react";
+import React, {
+  forwardRef,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from "react";
 import Button from "../button";
 
 interface IProps {
-  onChange: (data: string) => void;
+  onChange: (data: any) => void;
 }
 
-const UploadAndDisplayImage = ({ onChange }: IProps) => {
+const UploadAndDisplayImage = forwardRef(({ onChange }:  IProps, ref) => {
   const [selectedImage, setSelectedImage] = useState(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const onRemoveFile = () => {
-    setSelectedImage(null) ; 
-    onChange('')
-  }
-  const onSelectFile = async (event: any ) => {
+    setSelectedImage(null);
+    onChange("");
+  };
+  const onSelectFile = async (event: any) => {
     const file = event.target.files[0];
-    setSelectedImage(file)
-    const convertedFile = await convertToBase64(file) as string;
+    setSelectedImage(file);
+    const convertedFile = (await convertToBase64(file)) as string;
     console.log("convertedFile", typeof convertedFile);
-    
-    onChange(convertedFile)
-    
+    onChange(file);
+
     // Request will be sent from here in the future
-}
-const convertToBase64 = (file: Blob) => {
-    return new Promise(resolve => {
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = () => {
-            resolve(reader.result);
-        }
-    })
-}
+  };
+  const convertToBase64 = (file: Blob) => {
+    return new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        resolve(reader.result);
+      };
+    });
+  };
+  useImperativeHandle(ref, () => ({
+    remove: () => onRemoveFile(),
+  }));
 
   return (
     <div className="mt-8">
       {selectedImage ? (
         <div>
-          <img onClick={() => inputRef.current?.click()} className="cursor-pointer w-full mx-auto" alt="not found" src={URL.createObjectURL(selectedImage)} />
+          <img
+            onClick={() => inputRef.current?.click()}
+            className="cursor-pointer w-full mx-auto"
+            alt="not found"
+            src={URL.createObjectURL(selectedImage)}
+          />
           <Button className="my-4" onClick={onRemoveFile}>
             Remove
           </Button>
@@ -46,7 +58,7 @@ const convertToBase64 = (file: Blob) => {
         <div
           onClick={() => inputRef.current?.click()}
           className="flex flex-col items-center rounded-lg border-2 cursor-pointer
-              border-gray border-dashed justify-center py-10 px-3"
+            border-gray border-dashed justify-center py-10 px-3"
         >
           <svg
             width="22"
@@ -80,6 +92,6 @@ const convertToBase64 = (file: Blob) => {
       />
     </div>
   );
-};
+});
 
 export default UploadAndDisplayImage;

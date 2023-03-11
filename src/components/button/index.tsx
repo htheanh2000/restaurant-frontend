@@ -17,6 +17,10 @@ const STYLES = {
     bg: 'bg-gray',
     'text-color': 'text-black',
   },
+  dangerous: {
+    bg: 'bg-red',
+    'text-color': 'text-white',
+  },
 };
 
 const SIZES = {

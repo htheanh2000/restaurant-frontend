@@ -20,6 +20,7 @@ type Props = {
   name: IconName
   className?: string
   size?: keyof typeof IconSize
+  onClick?: () => void
 }
 
 type IconName = keyof typeof icons

@@ -26,3 +26,6 @@ export const ApiSignUp = async (params: ApiSignUpProps) => {
     const data = await api.post(url, params)
     return data
 }
+
+
+
