@@ -94,4 +94,6 @@ const UploadAndDisplayImage = forwardRef(({ onChange }:  IProps, ref) => {
   );
 });
 
+UploadAndDisplayImage.displayName = 'UploadAndDisplayImage'
+
 export default UploadAndDisplayImage;

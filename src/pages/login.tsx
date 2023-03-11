@@ -62,7 +62,7 @@ const LoginPage = () => {
       <div className="container mx-auto  mt-32 ">
         <h1 className="text-5xl text-brown">Login</h1>
         <p className="font-normal text-base text-brown">
-          Don't have an account?{" "}
+          Dont have an account?{" "}
           <Link className="font-medium text-blue" href="/sign-up">
             Sign up
           </Link>

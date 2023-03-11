@@ -45,7 +45,7 @@ const Reservation = () => {
                         <input id='checkbox' className="rounded-full" type='checkbox'/>
                         <label htmlFor="checkbox" className="cursor-pointer pl-4">Sign me up to receive dining offers and news from this restaurant by email.</label>
                     </div>
-                    <Button size='lg' className="rounded-xl mt-8" type='secondary'>Confirm reservation</Button>
+                    <Button size='lg' className="rounded-xl mt-8" style='secondary'>Confirm reservation</Button>
                     </div>
                     <div className="w-1/2 ml-4">
                         <div className="bg-gray/30 rounded-lg mt-4 p-4">
