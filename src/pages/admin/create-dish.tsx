@@ -42,11 +42,11 @@ const CreateDish = (props : IProps) => {
     name: Yup.string().required("Dish name is required"),
     description: Yup.string().required("Description is required"),
     rating: Yup.number()
-      .min(0, "Rating cannot be negative")
+      .min(1, "Rating cannot be zero")
       .max(5, "Rating cannot be greater than 5")
       .required("Rating is required"),
     price: Yup.number()
-      .min(0, "Price cannot be negative")
+      .min(1, "Price cannot be zero")
       .required("Price is required"),
     category: Yup.string().required("Category is required"),
     image: Yup.string().required("Image is required"),
@@ -109,7 +109,7 @@ const CreateDish = (props : IProps) => {
                     label="Rating"
                     name="rating"
                     type="number"
-                    min={0}
+                    min={1}
                     max={5}
                   />
                   <Field label="Price" name="price" type="number" min={0} />
