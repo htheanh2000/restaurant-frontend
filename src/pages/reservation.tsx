@@ -53,7 +53,7 @@ const ReservationPage = () => {
                     dateFormat="h:mm aa"
                     showTimeSelect showTimeSelectOnly placeholderText="Select a time" className="mt-8"/>
                     <Dropdown placeholder="Party size" options={options} className='mt-8'/>
-                    <Button type='secondary' className='mt-8 !rounded-md'>Book now</Button>
+                    <Button style='secondary' className='mt-8 !rounded-md'>Book now</Button>
                 </div>
             </div>
             <Reservation/>

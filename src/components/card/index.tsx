@@ -1,5 +1,4 @@
 import Image from "next/image";
-import IM_Sample_food from "@/assets/images/food/1.png";
 import Icon from "../icon";
 import Button from "../button";
 
@@ -15,7 +14,7 @@ interface IProps {
 }
 
 const AdminCard = (props: IProps) => {
-  const { className,name,description,rating,price,category,url,id } = props;
+  const { className,name,description,rating,price,url } = props;
   const STARS = [1, 2, 3, 4, 5]; // array represent for 5 start
   return (
     <div className={`rounded-3xl bg-gray/20 max-w-xs px-4 py-8 ${className}`}>

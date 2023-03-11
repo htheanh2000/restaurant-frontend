@@ -85,9 +85,9 @@ const SignUpPage = () => {
                   placeholder="jane@formik.com"
                 />
                 <Field label="Password " name="password" type="password" />
-                {
+                {/* {
                   status === 'idle' && error ? <ErrorMessage >{error.message}</ErrorMessage>  : null
-                }
+                } */}
                 <Button
                   type="submit"
                   className="mt-8 rounded"

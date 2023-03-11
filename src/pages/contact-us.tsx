@@ -19,7 +19,7 @@ const ContactUs = () => {
                     <textarea rows={10} placeholder="Message" 
                     className={`mt-8 w-full mx-4 px-4 py-3 cursor-pointer base-text text-gray outline rounded  outline-1 outline-gray focus:outline-primary`}/>
                 </div>
-                <Button type='secondary' size='lg' className="rounded-lg mt-16 w-80">Submit</Button>
+                <Button style='secondary' size='lg' className="rounded-lg mt-16 w-80">Submit</Button>
             </div>
             <Image src={IM_map} alt='map'/>
             <Footer/>
