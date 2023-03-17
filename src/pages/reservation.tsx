@@ -6,8 +6,9 @@ import IM_1 from '../assets/images/reservation/1.png'
 import DatePicker from "@/components/datepicker"
 import Dropdown, {Option} from "@/components/dropdown"
 import Reservation from "@/components/reservation"
-
+import { useState } from "react"
 const ReservationPage = () => {
+    const [isOpen, setIsOpen] = useState(false)
     const options:Option[] = [
         {
             value: 1,
@@ -53,10 +54,15 @@ const ReservationPage = () => {
                     dateFormat="h:mm aa"
                     showTimeSelect showTimeSelectOnly placeholderText="Select a time" className="mt-8"/>
                     <Dropdown placeholder="Party size" options={options} className='mt-8'/>
-                    <Button style='secondary' className='mt-8 !rounded-md'>Book now</Button>
+                    <Button style='secondary' className='mt-8' onClick={() => setIsOpen(true)}>Book now</Button>
                 </div>
             </div>
-            <Reservation/>
+            {
+                isOpen &&
+            <Reservation onClose={() => {
+                setIsOpen(false)
+            }}/>
+            }
             <Footer/>
         </div>
     )

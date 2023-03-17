@@ -51,10 +51,10 @@ const IconSize = {
 }
 
 const Icon = (props: Props) => {
-  const { name, size = 'sm', className } = props
+  const { name, size = 'sm', className , onClick} = props
  
   return (
-    <div>
+    <div onClick={onClick}>
             <Image
                 src={icons[name]}
                 className={`cursor-pointer ${className}`}

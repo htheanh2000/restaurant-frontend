@@ -1,6 +1,6 @@
 import axios, { AxiosRequestConfig } from 'axios'
 
-const BASE_URL = 'https://restaurant-management-0411.herokuapp.com/v1/'
+const BASE_URL = 'http://localhost:4000/v1' //'https://restaurant-management-0411.herokuapp.com/v1/'
 
 const api = axios.create({
   baseURL: BASE_URL,

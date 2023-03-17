@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Icon from "../icon";
 import Button from "../button";
+import { formatter } from "@/utils/number";
 
 interface IProps {
   name: string;
@@ -30,7 +31,7 @@ const AdminCard = (props: IProps) => {
         {description}
       </p>
       <div className="flex mx-auto justify-evenly mt-4">
-        <h2 className="text-2xl font-semibold">${price}</h2>
+        <h2 className="text-2xl font-semibold">{formatter.format(price)} </h2>
         <Button className="mx-4" style="secondary">Order Now</Button>
       </div>
     </div>

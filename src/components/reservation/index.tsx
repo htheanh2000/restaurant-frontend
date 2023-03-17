@@ -3,7 +3,11 @@ import Dropdown, {Option} from "../dropdown"
 import Icon from "../icon"
 import Input from "../input"
 
-const Reservation = () => {
+interface IProps {
+    onClose: () => void
+}
+
+const Reservation = (props: IProps) => {
     const occasions:Option[] = [
         {
             value: 'Celebrity occasions',
@@ -26,9 +30,10 @@ const Reservation = () => {
             label: 'Other'
         }
     ]
+
     return (
         <div className="absolute top-0 w-screen h-fit bg-gray/70">
-            <Icon className="mx-auto mt-16" size="lg" name='close'/>
+             <Icon onClick={() => props.onClose()} className="mx-auto mt-16" size="lg" name='close'/>
             <div className="bg-white px-12 mb-24 pb-16 flex flex-col items-center w-5/6 h-full mx-auto mt-8">
                 <h2 className="mt-8 text-6xl font-semibold">Reservation</h2>
                 <span className="mt-8 bg-blue/20 py-8 w-full text-center rounded-xl">Due to limited availability, we can hold this table for you for <strong>5:00 minutes</strong></span>
