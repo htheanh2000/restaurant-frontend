@@ -6,7 +6,7 @@ import * as Yup from "Yup";
 import { Form, Formik } from "formik";
 import Field from "../form/field";
 import { useRouter } from "next/router";
-import { useAppDispatch } from "@/store/hooks";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { reservationAction } from "@/store/features/reservation/reservationSlice";
 interface IProps {
   onClose: () => void;
@@ -40,6 +40,9 @@ const Reservation = (props: IProps) => {
       label: "Other",
     },
   ];
+
+  const {error} = useAppSelector(state => state.reservation)
+
   const { data } = props;
   const router = useRouter()
   const dispatch = useAppDispatch()
@@ -48,7 +51,7 @@ const Reservation = (props: IProps) => {
     phone: "",
     email: "",
     occasions: "",
-    request: "",
+    note: "",
     notification: false,
   };
 
@@ -58,15 +61,19 @@ const Reservation = (props: IProps) => {
     email: Yup.string().email().required(),
   });
 
-  const onSubmit = (values: any, { setSubmitting }: any) => {
+  const onSubmit = async (values: any, { setSubmitting }: any) => {
     setSubmitting(false);
-    console.log(values);
     const params = {
         ...values,
-        ...data
+        ...data,
     }
-    dispatch(reservationAction(params))
-    router.push('order-successfully')
+    await dispatch(reservationAction(params))
+    if(!error) {
+      router.push('order-successfully')
+    }
+    else {
+      router.push('order-failed')
+    }
   };
 
   return (
@@ -107,7 +114,7 @@ const Reservation = (props: IProps) => {
                   />
                   <textarea
                     onChange={(event) =>
-                      formik.setFieldValue("request", event.currentTarget.value)
+                      formik.setFieldValue("note", event.currentTarget.value)
                     }
                     rows={10}
                     placeholder="Add a special request"

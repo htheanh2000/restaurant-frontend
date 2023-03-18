@@ -2,6 +2,7 @@ import { configureStore, MiddlewareArray } from '@reduxjs/toolkit'
 import counterReducer from './features/counter/counterSlice'
 import userReducer from './features/user/userSlice'
 import menuReducer from './features/menu/menuSlice'
+import resertvationReducer from './features/reservation/reservationSlice'
 import thunkMiddleware from 'redux-thunk'
 import { createWrapper } from 'next-redux-wrapper'
 import logger from 'redux-logger'
@@ -10,7 +11,8 @@ export const store = configureStore({
   reducer: {
     counter: counterReducer,
     user: userReducer,
-    menu: menuReducer
+    menu: menuReducer,
+    reservation: resertvationReducer
   },
   middleware: new MiddlewareArray().concat(thunkMiddleware, logger),
 })
