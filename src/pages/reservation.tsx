@@ -8,7 +8,7 @@ import Dropdown, { Option } from "@/components/dropdown";
 import Reservation from "@/components/reservation";
 import { useState } from "react";
 import classnames from "classnames";
-import * as Yup from "yup";
+import * as Yup from "Yup";
 import ErrorMessage from "@/components/errorMessage";
 import { Form, Formik } from "formik";
 import { formatDate, getTime } from "@/utils/datetime";
@@ -70,9 +70,9 @@ const ReservationPage = () => {
     setIsOpen(true);
   };
   return (
-    <div>
+    <div className={classnames({ "w-screen h-screen mx-auto overflow-hidden": isOpen })}>
       <Header />
-      <div className={classnames({ "w-screen mx-auto fixed": isOpen })}>
+      <div >
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}

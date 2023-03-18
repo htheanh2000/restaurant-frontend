@@ -23,7 +23,7 @@ const Input = forwardRef((props: Props, ref, ) => {
 
   return (
     <div className={`${className}`}>
-      <label htmlFor={label} className="lead">
+      <label htmlFor={label} className="lead capitalize">
         {label}
       </label>
       <div className="mt-4">
