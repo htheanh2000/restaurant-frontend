@@ -1,3 +1,4 @@
+import { format } from "date-fns"
 import Button from "../button"
 import Dropdown, {Option} from "../dropdown"
 import Icon from "../icon"
@@ -5,6 +6,11 @@ import Input from "../input"
 
 interface IProps {
     onClose: () => void
+    data: {
+        date: string,
+        time: string,
+        size: string
+    }
 }
 
 const Reservation = (props: IProps) => {
@@ -31,10 +37,11 @@ const Reservation = (props: IProps) => {
         }
     ]
 
+    const { data} = props
     return (
-        <div className="absolute top-0 w-screen h-fit bg-gray/70">
+        <div className="fixed top-0 w-screen  h-screen bg-gray/70 overflow-auto">
              <Icon onClick={() => props.onClose()} className="mx-auto mt-16" size="lg" name='close'/>
-            <div className="bg-white px-12 mb-24 pb-16 flex flex-col items-center w-5/6 h-full mx-auto mt-8">
+            <div className="bg-white h-max px-12 mb-24 pb-16 flex flex-col items-center w-5/6  mx-auto mt-8">
                 <h2 className="mt-8 text-6xl font-semibold">Reservation</h2>
                 <span className="mt-8 bg-blue/20 py-8 w-full text-center rounded-xl">Due to limited availability, we can hold this table for you for <strong>5:00 minutes</strong></span>
                 <h3 className="w-full font-semibold mt-12 mb-8">Data order</h3>
@@ -57,16 +64,20 @@ const Reservation = (props: IProps) => {
                             <h5 className="font-semibold text-base">Reservation detail</h5>
                             <div className="flex mt-8">
                                 <Icon className="mr-4" name='calendar'/>
-                                <span>Saturday, 28 february 2022</span>
+                                <span>{format(new Date(data.date), 'EEEE, dd MMMM yyyy')}</span>
                             </div>
                             <div className="flex mt-6">
                                 <Icon className="mr-4" name='clock'/>
-                                <span>04:30pm</span>
+                                <span>{data.time}</span>
                             </div>
                             <div className="flex mt-6">
                                 <Icon className="mr-4" name='people'/>
                                 <span>2 people (Standar seating)</span>
                             </div>
+                        </div>
+
+                        <div>
+                            {``}
                         </div>
                             <h4 className="font-semibold text-2xl mt-8">Restaurant informations</h4>
                             <p className="mt-4 text-base font-normal">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.

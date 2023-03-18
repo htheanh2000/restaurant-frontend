@@ -4,28 +4,31 @@ type Props = {
     className?: string;
     options?: Option[]
     placeholder?: string;
+    onChange?: (value: any) => void
+
 }
 
 export type Option = {
     value: unknown,
-    label: string
+    label: string,
 }
 
 const Dropdown = (props: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [value, setValue] = useState<Option>()
-  const {options = [], placeholder = 'Select option'} = props;
+  const {options = [], placeholder = 'Select option', onChange} = props;
 
   const {className} = props
 
     const onchange = (option: Option) => {
         setIsOpen(false)
         setValue(option)
+        onChange && onChange(option)
     }
   return (
     <div className={`relative ${className}`}>
       <div
-        className="w-full px-4 py-3 cursor-pointer base-text text-gray outline rounded  outline-1 outline-gray focus:outline-primary"
+        className="w-full px-4 py-3 cursor-pointer base-text  outline rounded  outline-1 outline-gray focus:outline-primary"
         onClick={() => setIsOpen(!isOpen)}
       >
         {value ? value.label : placeholder}
