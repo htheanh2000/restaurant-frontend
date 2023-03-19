@@ -1,7 +1,6 @@
 import axios, { AxiosRequestConfig } from 'axios'
 
-const BASE_URL = 'https://restaurant-management-0411.herokuapp.com/v1/'
-
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL
 const api = axios.create({
   baseURL: BASE_URL,
   timeout: 30000, 
