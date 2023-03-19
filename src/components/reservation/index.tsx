@@ -8,6 +8,7 @@ import Field from "../form/field";
 import { useRouter } from "next/router";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { reservationAction } from "@/store/features/reservation/reservationSlice";
+import Error from "../errorMessage";
 interface IProps {
   onClose: () => void;
   data: {
@@ -59,6 +60,8 @@ const Reservation = (props: IProps) => {
     name: Yup.string().required(),
     phone: Yup.string().required(),
     email: Yup.string().email().required(),
+    occasions: Yup.string().required(),
+    note: Yup.string().required(),
   });
 
   const onSubmit = async (values: any, { setSubmitting }: any) => {
@@ -67,8 +70,8 @@ const Reservation = (props: IProps) => {
         ...values,
         ...data,
     }
-    await dispatch(reservationAction(params))
-    if(!error) {
+    const result = await dispatch(reservationAction(params))
+    if(result.type === 'reservation/fulfilled') {
       router.push('order-successfully')
     }
     else {
@@ -112,6 +115,7 @@ const Reservation = (props: IProps) => {
                     options={occasions}
                     placeholder="Select an occasions"
                   />
+                  <Error name='occasions'/>
                   <textarea
                     onChange={(event) =>
                       formik.setFieldValue("note", event.currentTarget.value)
@@ -120,6 +124,7 @@ const Reservation = (props: IProps) => {
                     placeholder="Add a special request"
                     className={`mt-8 w-full px-4 py-3 cursor-pointer base-text outline rounded  outline-1 outline-gray focus:outline-primary`}
                   />
+                  <Error name='note'/>
                   <div className="max-w-xs flex">
                     <input
                       onChange={(event) => {
@@ -141,7 +146,11 @@ const Reservation = (props: IProps) => {
                     type="submit"
                     size="lg"
                     className="rounded-xl mt-8"
-                    style="secondary"
+                    style={
+                      formik.isValid && !formik.isSubmitting
+                        ? "secondary"
+                        : "disable"
+                    }
                   >
                     Confirm reservation
                   </Button>
