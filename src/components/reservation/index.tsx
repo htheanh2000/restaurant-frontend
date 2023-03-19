@@ -2,7 +2,7 @@ import { format } from "date-fns";
 import Button from "../button";
 import Dropdown, { Option } from "../dropdown";
 import Icon from "../icon";
-import * as Yup from "Yup";
+import * as Yup from "yup";
 import { Form, Formik } from "formik";
 import Field from "../form/field";
 import { useRouter } from "next/router";

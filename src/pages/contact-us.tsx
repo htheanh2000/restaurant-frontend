@@ -4,7 +4,7 @@ import Footer from "@/layouts/footer";
 import Header from "@/layouts/header";
 import Image from "next/image";
 import IM_map from "../assets/images/contact-us/map.png";
-import * as Yup from "Yup";
+import * as Yup from "yup";
 import { Form, Formik } from "formik";
 import Field from "@/components/form/field";
 import Error from "@/components/errorMessage";

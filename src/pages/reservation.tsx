@@ -8,7 +8,7 @@ import Dropdown, { Option } from "@/components/dropdown";
 import Reservation from "@/components/reservation";
 import { useState } from "react";
 import classnames from "classnames";
-import * as Yup from "Yup";
+import * as Yup from "yup";
 import ErrorMessage from "@/components/errorMessage";
 import { Form, Formik } from "formik";
 import { formatDate, getTime } from "@/utils/datetime";

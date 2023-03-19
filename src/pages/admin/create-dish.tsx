@@ -1,6 +1,6 @@
 import Button from "@/components/button";
 import { Form, Formik } from "formik";
-import * as Yup from "Yup";
+import * as Yup from "yup";
 import Field from "@/components/form/field";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { useEffect, useRef, useState } from "react";

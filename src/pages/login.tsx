@@ -8,7 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
 import { Form, Formik } from "formik";
-import * as Yup from "Yup";
+import * as Yup from "yup";
 import { ApiLoginProps } from "@/api/user";
 import Field from "@/components/form/field";
 import { useAppSelector } from "@/store/hooks";
