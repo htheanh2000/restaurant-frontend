@@ -16,7 +16,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Action } from "redux";
 import { ThunkDispatch } from "redux-thunk";
-import * as Yup from "yup";
+import * as Yup from "Yup";
 
 const SignUpPage = () => {
   const dispatch =
