@@ -92,7 +92,7 @@ const menuSlice = createSlice({
         state.status = 'idle'
       })
       .addCase(createNewDishAction.rejected, (state, action: any) => {
-        console.log(action.payload.data)
+        
         state.status = 'idle'
         state.error = action.payload.message
       })
@@ -105,7 +105,7 @@ const menuSlice = createSlice({
         state.status = 'idle'
       })
       .addCase(getMenuAction.rejected, (state, action: any) => {
-        console.log(action.payload.data)
+        
         state.status = 'idle'
         state.error = action.payload.message
       })

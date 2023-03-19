@@ -57,7 +57,7 @@ const userSlice = createSlice({
         state.status = 'idle'
       })
       .addCase(logInAction.rejected, (state, action: any) => {
-        console.log(action.payload.data)
+        
         state.status = 'idle'
         state.error = action.payload.message
       })
@@ -70,7 +70,7 @@ const userSlice = createSlice({
         state.status = 'idle'
       })
       .addCase(signUpAction.rejected, (state, action: any) => {
-        console.log(action.payload.data)
+        
         state.status = 'idle',
         state.error = action.payload
       })

@@ -11,8 +11,8 @@ const Error = (props: Props) => {
       <ErrorMessage
         name={props.name}
         component="div"
-        className={`${props.className} capitalize px-4 py-3 mt-3 ring-1 ring-red-400
-              rounded bg-red-100 text-red text-xs`}
+        className={` capitalize px-4 py-3 mt-3 ring-1 ring-red-400
+              rounded bg-red-100 text-red text-xs ${props.className}`}
       />
     </>
   )

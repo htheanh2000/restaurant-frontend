@@ -1,10 +1,10 @@
-import { ApiReservation } from '@/api/reservation'
+import { ApiContact } from '@/api/contact'
 import { createSlice, createAsyncThunk, Reducer } from '@reduxjs/toolkit'
 
 // omit imports and state
-export const reservationAction = createAsyncThunk('reservation', async (props: unknown, { rejectWithValue }) => {
+export const contactAction = createAsyncThunk('contact', async (props: unknown, { rejectWithValue }) => {
   try {
-    const {data} = await ApiReservation(props)
+    const {data} = await ApiContact(props)
     return data
   } catch (error: any) {
     if (!error.response) {
@@ -31,7 +31,7 @@ const initialState:IState = {
 }
 
 const reservationSlice = createSlice({
-  name: 'reservation',
+  name: 'contact',
   initialState,
   reducers: {
     // omit reducer cases
@@ -39,15 +39,16 @@ const reservationSlice = createSlice({
   extraReducers: builder => {
     builder
     // ===== RESERVATIOn =================================
-      .addCase(reservationAction.pending, (state, _action) => {
+      .addCase(contactAction.pending, (state, _action) => {
         state.status = 'loading'
         state.error = null
       })
-      .addCase(reservationAction.fulfilled, (state, _action) => {
+      .addCase(contactAction.fulfilled, (state, _action) => {
         // state.data = action.payload
         state.status = 'idle'
       })
-      .addCase(reservationAction.rejected, (state, action: any) => {
+      .addCase(contactAction.rejected, (state, action: any) => {
+        console.log("Rejected", action.payload.message);
         
         state.status = 'idle'
         state.error = action.payload.message
