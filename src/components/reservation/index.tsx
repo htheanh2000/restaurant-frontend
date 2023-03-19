@@ -61,7 +61,6 @@ const Reservation = (props: IProps) => {
     phone: Yup.string().required(),
     email: Yup.string().email().required(),
     occasions: Yup.string().required(),
-    note: Yup.string().required(),
   });
 
   const onSubmit = async (values: any, { setSubmitting }: any) => {
@@ -124,7 +123,6 @@ const Reservation = (props: IProps) => {
                     placeholder="Add a special request"
                     className={`mt-8 w-full px-4 py-3 cursor-pointer base-text outline rounded  outline-1 outline-gray focus:outline-primary`}
                   />
-                  <Error name='note'/>
                   <div className="max-w-xs flex">
                     <input
                       onChange={(event) => {
